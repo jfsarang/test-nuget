@@ -6,9 +6,10 @@ steps:
   inputs:
     artifactoryConnection: 'sarangeplus'
     cliInstallationRepo: 'jfrog-cli-remote'
+    installCustomVersion: true
+    cliVersion: '2.37.3'
     installExtractors: true
     extractorsInstallationRepo: 'extractors'
-    cliVersion: '2.37.3'
 - task: JFrogNuGet@1
   inputs:
     command: 'restore'
