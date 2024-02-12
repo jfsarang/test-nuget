@@ -8,6 +8,7 @@ steps:
     cliInstallationRepo: 'jfrog-cli-remote'
     installExtractors: true
     extractorsInstallationRepo: 'extractors'
+    cliVersion: '2.37.3'
 - task: JFrogNuGet@1
   inputs:
     command: 'restore'
