@@ -1,5 +1,8 @@
 trigger:
-- main
+  branches:
+      include:
+      - master
+
 
 steps:
 - task: JFrogToolsInstaller@1
