@@ -16,3 +16,7 @@ steps:
     artifactoryConnection: 'sarangeplus'
     targetResolveRepo: 'nuget-virtual'
     solutionPath: '**/*.sln'
+    noNuGetCache: true
+    collectBuildInfo: true
+    buildName: 'bmp-nuget-demo'
+    nugetProtocolVersion: v2
