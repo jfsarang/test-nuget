@@ -10,6 +10,7 @@ steps:
     cliVersion: '2.37.3'
     installExtractors: true
     extractorsInstallationRepo: 'extractors'
+
 - task: JFrogNuGet@1
   inputs:
     command: 'restore'
@@ -20,3 +21,11 @@ steps:
     collectBuildInfo: true
     buildName: 'bmp-nuget-demo'
     nugetProtocolVersion: v2
+    
+- script: |
+    # Look for nuget.exe in common locations
+    Get-ChildItem -Path "$env:ProgramFiles\NuGet" -Filter "nuget.exe" -Recurse -ErrorAction SilentlyContinue | Select-Object -ExpandProperty FullName
+    Get-ChildItem -Path "$env:ProgramFiles(x86)\NuGet" -Filter "nuget.exe" -Recurse -ErrorAction SilentlyContinue | Select-Object -ExpandProperty FullName
+    Get-ChildItem -Path "$env:Agent.ToolsDirectory" -Filter "nuget.exe" -Recurse -ErrorAction SilentlyContinue | Select-Object -ExpandProperty FullName
+    Get-ChildItem -Path "$env:SystemDrive\NuGet" -Filter "nuget.exe" -Recurse -ErrorAction SilentlyContinue | Select-Object -ExpandProperty FullName
+    displayName: 'Search for nuget.exe'
