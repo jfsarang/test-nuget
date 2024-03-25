@@ -22,4 +22,3 @@ steps:
     collectBuildInfo: true
     buildName: 'bmp-nuget-demo'
     nugetProtocolVersion: v2
-    arguments: '-ConfigFile ./nugetv2.config'
